@@ -8,4 +8,4 @@ chapter: true
 
 # Setup
 
-Pages detailing the download, setup, and build of the Microbit v2 API on Windows, Mac and Linux.
+Pages detailing the download and setup of the micro:bit v2 build environment on Windows, Mac and Linux.

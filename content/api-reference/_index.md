@@ -8,4 +8,4 @@ chapter: true
 
 # API Reference
 
-A comprehensive API reference for the CODAL C/C++ Microbit v2 APIs.
+A comprehensive API reference for the CODAL C/C++ micro:bit v2 APIs.

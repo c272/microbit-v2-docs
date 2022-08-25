@@ -8,4 +8,4 @@ chapter: true
 
 # Guides
 
-A set of tutorials describing the individual Microbit v2 APIs, with practical examples and usage tips.
+A set of tutorials describing the individual micro:bit v2 APIs, with practical examples and usage tips.
