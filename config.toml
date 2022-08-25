@@ -1,0 +1,14 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = "hugo-theme-learn"
+
+[params]
+  # Change default color scheme with a variant one.
+  themeVariant = "atom-dark"
+
+# Allow for shortcode HTML injection.
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
