@@ -1,6 +1,6 @@
 baseURL = 'https://microbit.c272.org/'
 languageCode = 'en-uk'
-title = 'Microbit v2 Documentation'
+title = 'micro:bit v2 Documentation'
 theme = "hugo-theme-learn"
 
 [params]
