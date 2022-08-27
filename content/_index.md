@@ -32,7 +32,7 @@ cd microbit-v2/
 ```
 
 Once this is done, you will also have to install several prerequisite dependencies in order to begin building and using the micro:bit API. If you are on Windows, you will likely not have a package manager installed. In this case, refer to the [Windows Install Guide](/setup/windows-install-guide/) for information on how to install the necessary dependencies. If you are on a Linux distribution, however, you can simply install packages from the command line, as shown below:
-{{< tabs >}}
+{{< tabs groupId="os" >}}
 {{% tab name="ubuntu/debian" %}}
 ```bash
 sudo apt install gcc python3 cmake gcc-arm-none-eabi binutils-arm-none-eabi

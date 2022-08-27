@@ -31,7 +31,7 @@ Once this is done, you will also have to install several prerequisite dependenci
 - GCC ARM libstdc++
 
 If you are on a Debian-based distribution such as Ubuntu or Void Linux, the relevant commands to install all dependencies can be found below. If not, you will have to consult your distribution's relevant package repository to find the correct package names.
-{{< tabs >}}
+{{< tabs groupId="os" >}}
 {{% tab name="ubuntu/debian" %}}
 ```bash
 sudo apt install gcc python3 cmake gcc-arm-none-eabi binutils-arm-none-eabi

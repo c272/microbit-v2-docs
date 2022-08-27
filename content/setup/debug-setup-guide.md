@@ -8,7 +8,7 @@ The micro:bit v2 supports debugging over its provided programming port, allowing
 ## Installing Visual Studio Code
 To begin with, we should first install Visual Studio Code. If you've already done this, skip straight to the next step. For users on Windows and MacOS, you should download the latest version found at the official [download page](https://code.visualstudio.com/Download). However, if you're on a Linux distribution, you can likely install it straight from your package manager or via. Snap:
 
-{{< tabs >}}
+{{< tabs groupId="os" >}}
 {{% tab name="ubuntu/debian" %}}
 ```bash
 sudo apt install software-properties-common apt-transport-https wget -y
@@ -35,7 +35,7 @@ Once this is done, you should also install the `marus25.cortex-debug` extension 
 ## Installing OpenOCD
 If you have chosen to install OpenOCD, it is available officially through most package managers on Linux, and through an [automatically generated release binary](https://github.com/openocd-org/openocd/releases/tag/v0.11.0) from Github for Windows MinGW32 users. There are no officially released MacOS binaries, however there are alternative unofficial binaries provided by the `xpack-dev-tools` project, which provide binaries for [MacOS ARM64](https://github.com/xpack-dev-tools/openocd-xpack/releases), [MacOS x64](https://github.com/xpack-dev-tools/openocd-xpack/releases), [Windows x64](https://github.com/xpack-dev-tools/openocd-xpack/releases), [Linux x64](https://github.com/xpack-dev-tools/openocd-xpack/releases), and [Linux ARM64](https://github.com/xpack-dev-tools/openocd-xpack/releases). If you simply wish to install through a package manager however, you can do that like so:
 
-{{< tabs >}}
+{{< tabs groupId="os" >}}
 {{% tab name="ubuntu/debian" %}}
 ```bash
 sudo apt install openocd
