@@ -1,5 +1,5 @@
 +++
-title = "Using the micro:bit File System"
+title = "Using the micro:bit file system"
 weight = 2
 +++
 
