@@ -40,12 +40,12 @@ int main()
 Once we have created a logger, we can begin adding log entries from any input sources we might have. For this example, we will import data from the micro:bit's onboard temperature sensor every 10 seconds.
 ```cpp
 //Only keep logging while we have space left.
-while (!logger.isFull()) {
+while (!logger->isFull()) {
 
     //Create a row with temperature data.
-    logger.beginRow();
+    logger->beginRow();
     logger->logData("temperature", uBit.thermometer.getTemperature());
-    logger.endRow();
+    logger->endRow();
 
     //Wait a while.
     uBit.sleep(10 * 1000);
@@ -63,10 +63,10 @@ With this sort of data, it's probably useful to have a timestamp attached to it.
 We can modify our code to enable timestamps before we start logging data like so:
 ```cpp
 //Set log entry timestamp type to log the seconds passed.
-logger.setTimeStamp(TimeStampFormat::Seconds);
+logger->setTimeStamp(TimeStampFormat::Seconds);
 
 //Only keep logging while we have space left.
-while (!logger.isFull()) {
+while (!logger->isFull()) {
     ...
 }
 ```
@@ -74,7 +74,7 @@ while (!logger.isFull()) {
 ## Accessing Log Data
 Now that we've logged data to the micro:bit's flash, what is remaining is to access this from the PC side. First, we should make sure that the HTML file that allows you to access your data is set to be visible from the micro:bit code. To make the HTML viewer visible from the mounted partition, you can run the following from your micro:bit code.
 ```cpp
-logger.setVisibility(true);
+logger->setVisibility(true);
 ```
 
 Once this is done, you should be able to open `MY_DATA.html` from the mounted partition on your PC, and view the logged data appropriately.
