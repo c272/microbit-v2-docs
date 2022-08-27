@@ -77,9 +77,25 @@ Now that we've logged data to the micro:bit's flash, what is remaining is to acc
 logger->setVisibility(true);
 ```
 
-Once this is done, you should be able to open `MY_DATA.html` from the mounted partition on your PC, and view the logged data appropriately.
+Once this is done, you should be able to open `MY_DATA.html` from the mounted partition on your PC, and view the logged data through the browser.
 
 {{% margin-image image="/images/microbitlog-mydata.webp" margin="0.5em" %}}
 {{% center %}}
 {{% caption text="Image Attribution: (c) British Broadcasting Corporation, 2022" %}}
 {{% /center %}}
+
+You can also access the log data from code, by using the `readData()` method in tandem with the `getDataLength()` method. This allows you to read from either the HTML header, HTML header with data, or the raw CSV data alone, with a given offset and length. An example would be something like the following:
+```cpp
+//Get the length of the CSV data to read out, make a buffer for it.
+uint32_t csvLen = logger->getDataLength(DataFormat::CSV);
+void* csvData = malloc(csvLen);
+
+//Read this data from the logger with offset 0.
+//The last parameter of this call should always be the result of getDataLength(DataFormat::...),
+//equivalent to the type of data you're receiving.
+int result = logger->readData(csvData, 0, csvLen, DataFormat::CSV, csvLen);
+if (result != DEVICE_OK) {
+    //Something bad happened!
+    //...
+}
+```
