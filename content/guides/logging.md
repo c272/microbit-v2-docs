@@ -52,7 +52,7 @@ while (!uBit.log.isFull()) {
 }
 ```
 
-With this sort of data, it's probably useful to have a timestamp attached to it. To achieve this, we can modify our logger to use a handy method provided by the logger that allows you to set a timestamp to be attached to each log row. When enabling timestamping, we also need to choose the granularity of the attached timestamps. The available time stamp granularities are:
+With this sort of data, it's probably useful to have a timestamp attached to it. To achieve this, we can modify our logging code to use a handy method provided by the logger which sets a timestamp to be attached to each log row. When enabling timestamping, we also need to choose the granularity of the attached timestamps. The available time stamp granularities are:
 - None (no timestamp attached)
 - Milliseconds
 - Seconds
