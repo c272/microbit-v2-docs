@@ -6,10 +6,11 @@ weight = 16
 If you installed the micro:bit v2 build environment through a method other than the script-assisted setup, you will not have had `micro-tools` installed in the setup process. In addition, the default micro:bit v2 build environment only permits you to build code from within the sample repository's "`source`" directory, which can be limiting when programming multiple micro:bit projects at once. With these things in mind, `micro-tools` allows you to remove these restrictions, as well as adding a suite of useful utilities for working with micro:bit v2 projects. So, what is `micro-tools`, and how is it installed?
 
 ## What is micro-tools?
-The `micro-tools` repository is a companion project to this documentation, and contains useful utility scripts for working with micro:bit v2 projects, as well as handy alias setup for calling the scripts from anywhere on your system. The repository can be found at `c272/micro-tools` on Github. The project is only compatible with **Linux based operating systems**, and does not explicitly support either Windows nor MacOS. There are several utilities contained within the project, the most notable of which being:
-- `microbuild`
-- `microinit`
+The `micro-tools` repository is a companion project to this documentation, and contains useful utility scripts for working with micro:bit v2 projects, as well as handy alias setup for calling the scripts from anywhere on your system. The repository can be found at `c272/micro-tools` on Github. The project is only compatible with **Linux based operating systems**, and does not explicitly support either Windows or MacOS. There are several utilities contained within the project, the most notable of which being:
 - `microinstall`
+- `microinit`
+- `microbuild`
+- `microflash`
 
 Below is a brief explanation of what each tool does, how it is used, and what systems it is compatible with.
 
@@ -45,6 +46,18 @@ microbuild BUILD_DIRECTORY=./src BUILD_OUTPUT_DIRECTORY=./bin
 ```
 This would take `src` as the source project to build, and `bin` as the destination for the `MICROBIT.hex` file.
 
+### microflash
+This tool allows for the flashing of built micro:bit v2 projects to the micro:bit. By default, `microflash` will search for a file named `MICROBIT.hex` in the executing directory (this can be configured in `config.h` or passed in as the command line parameter `MICROBIT_HEX_FILE`), and flash this onto the microbit once mounted. You can perform this with simply:
+```bash
+microflash
+```
+
+The first time the micro:bit is flashed, it is mounted to a directory on the filesystem. By default, this is `mnt/microbit` within the scripts directory, however you can configure this directory in `config.sh` or pass it in as the command line option `MICROBIT_MOUNT_DIR`. If you want to unmount the micro:bit for whatever reason, you can simply pass `DO_UNMOUNT` to `microflash` like so:
+```bash
+microflash DO_UNMOUNT=true
+```
+
+This will unmount the micro:bit from your system, and then exit.
 
 ## Installing micro-tools
 {{% notice note %}}
