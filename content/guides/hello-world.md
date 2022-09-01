@@ -51,6 +51,12 @@ int main()
 }
 ```
 
-And with that, we have completed our 'Hello World' example! All that's remaining is to build and flash onto the micro:bit itself. To build, you can either use the `CTRL+SHIFT+B` shortcut in Visual Studio Code (or access the menu manually through `Terminal->Run Build Task`), or simply run `microbuild` from the terminal in your project folder. To flash onto the micro:bit, simply drag the generated `MICROBIT.hex` file onto the micro:bit's mounted partition (you should see a new mount in your file system when attaching the micro:bit. If not, see the [Troubleshooting micro:bit Connection]() page).
+And with that, we have completed our 'Hello World' example! All that's remaining is to build and flash onto the micro:bit itself. If you have `micro-tools` installed, after you've plugged in your micro:bit, you can simply run the following in the command line from your project folder:
+```bash
+microbuild
+microflash
+```
+
+You can also use the `CTRL+SHIFT+B` shortcut in Visual Studio Code (or access the menu manually through `Terminal->Run Build Task`) and then simply run `microflash` from the terminal in your project folder. If you don't have `micro-tools`, you will have to build in the `microbit-v2-samples` directory with `python3 build.py`, and then drag the generated `MICROBIT.hex` file onto the micro:bit's mounted partition (you should see a new mount in your file system when attaching the micro:bit. If not, see the [Troubleshooting micro:bit Connection]() page).
 
 You should be able to see 'HELLO WORLD!' scrolling at the default speed across the micro:bit LED matrix. If so, congratulations! You've successfully run 'Hello World' on your micro:bit.
