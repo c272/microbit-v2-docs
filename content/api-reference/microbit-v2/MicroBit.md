@@ -10,7 +10,23 @@ Represents the micro:bit v2 in its entirety. Allows for convenient access to dev
 
 {{% /center %}}
 
-## Examples
+## Usage & Examples
+In most projects, the `MicroBit` class will be one of the first things instantiated and brought up after entering `main()`. Without this, the scheduler will not be running and the message bus will not be brought up. To start a normal micro:bit project, you can do something like this:
+```cpp
+#include <MicroBit.h>
+
+MicroBit uBit;
+
+int main()
+{
+    //Initialise the scheduler, BLE, etc.
+    uBit.init();
+
+    //Scroll some cool stuff on the screen!
+    while (true)
+        uBit.display.scroll("Hello micro:bit!");
+}
+```
 
 ## Static Methods
 ### getSerial()
@@ -153,96 +169,115 @@ An instance of [MicroBitI2C](/api-reference/microbit-v2/microbiti2c/) which allo
 ```cpp
 MicroBitPowerManager power;
 ```
+The device's [MicroBitPowerManager](/api-reference/microbit-v2/microbitpowermanager/). Contains power state information for the device, and allows for the control of deep sleep modes, as well as the sending and receiving of control packets to the USB interface chip.
 
 ### flash
 ```cpp
 MicroBitUSBFlashManager flash;
 ```
+[MicroBitUSBFlashManager](/api-reference/microbit-v2/microbitusbflashmanager/) instance. An interface to the micro:bit's USB interface and USB storage area, allowing for the revealing and hiding of the USB file on the mounted drive, as well as arbitrary read and write from the USB storage area. Provides access to size and page information for the attached flash.
 
 ### internalFlash
 ```cpp
 NRF52FlashManager internalFlash;
 ```
+The underlying [NRF52FlashManager](/api-reference/nrf52/nrf52flashmanager/) interface which provides functions for reading and writing arbitrary portions of flash memory. Also provides information on the attached flash.
 
 ### storage
 ```cpp
 MicroBitStorage storage;
 ```
+`typedef` aliased instance of CODAL's [KeyValueStorage](/api-reference/core/keyvaluestorage/) class. Allows for persistent key-value pair style storage. This storage is buffered with a scratch page, and backed by the micro:bit's flash.
 
 ### ledRowPins[]
 ```cpp
 NRF52Pin* ledRowPins[5];
 ```
+The micro:bit's internal LED row pins, represented as [NRF52Pin](/api-reference/nrf52/nrf52pin/) instances.
 
 ### ledColPins[]
 ```cpp
 NRF52Pin* ledColPins[5];
 ```
+The micro:bit's internal LED column pins, represented as [NRF52Pin](/api-reference/nrf52/nrf52pin/) instances.
 
 ### ledMatrixMap
 ```cpp
 const MatrixMap ledMatrixMap;
 ```
+A map representing the LED matrix on the front of the micro:bit, as a CODAL [MatrixMap](/api-reference/core/matrixmap/).
 
 ### display
 ```cpp
 MicroBitDisplay display;
 ```
+Instance of [MicroBitDisplay](/api-reference/microbit-v2/microbitdisplay/). Represents an interface to interact with the 'display' (LED matrix) on the micro:bit, with support for text rendering, scrolling text, as well as displaying animations and primitive images.
 
 ### buttonA
 ```cpp
 Button buttonA;
 ```
+A [Button](/api-reference/core/button/) interface which represents the button labeled 'A' on the micro:bit's face.
 
 ### buttonB
 ```cpp
 Button buttonB;
 ```
+A [Button](/api-reference/core/button/) interface which represents the button labeled 'B' on the micro:bit's face.
 
 ### buttonAB
 ```cpp
 MultiButton buttonAB;
 ```
+A [MultiButton](/api-reference/core/multibutton/) interface which represents the two buttons 'A' and 'B' on the micro:bit's face as a group. This can be used to detect, for example, when both buttons are pressed at the same time.
 
 ### logo
 ```cpp
 TouchButton logo;
 ```
+A [TouchButton](/api-reference/core/touchbutton/) interface which represents the logo on the face of the micro:bit. A main use of this is to detect when someone touches the logo 'pin'.
 
 ### radio
 ```cpp
 MicroBitRadio radio;
 ```
+An instance of [MicroBitRadio](/api-reference/microbit-v2/microbitradio/). This facilitates the sending and receiving of data over specific radio frequencies (from 2400MHz through 2500MHz, in 1MHz bands) with buffering.
 
 ### thermometer
 ```cpp
 MicroBitThermometer thermometer;
 ```
+[MicroBitThermometer](/microbit-v2/microbitthermometer/) instance. Infers the ambient temperature based on the surface temperature readings of various chips on the micro:bit.
 
 ### accelerometer
 ```cpp
 Accelerometer& accelerometer;
 ```
+A CODAL [Accelerometer](/api-reference/core/accelerometer/) abstraction. Allows for reading of the micro:bit's built in accelerometer data, as well as the configuration of the sample rate and range.
 
 ### compass
 ```cpp
 Compass& compass;
 ```
+A CODAL [Compass](/api-reference/core/compass/) abstraction. Reads the magnetometer to determine the orientation of the device, applying tilt compensation from data provided by the accelerometer.
 
 ### compassCalibrator
 ```cpp
 MicroBitCompassCalibrator compassCalibrator;
 ```
+The micro:bit calibration manager for the CODAL [Compass](/api-reference/core/compass/), represented in a [MicroBitCompassCalibrator](/api-reference/microbit-v2/microbitcompasscalibrator/) instance. Performs a least mean squares optimisation of results from sample data to obtain calibration data for the compass. Can also help prompt the user to collect required sample data by moving around the micro:bit with a small LED game.
 
 ### audio
 ```cpp
 MicroBitAudio audio;
 ```
+Represents the audio API for the micro:bit v2, as [MicroBitAudio](/api-reference/microbit-v2/microbitaudio/). Allows for multi-stream audio playback with a basic mixer, as well as synthesiser support for small sound bytes. Also contains a reference to the microphone ADC channel.
 
 ### log
 ```cpp
 MicroBitLog log;
 ```
+The [MicroBitLog](/api-reference/microbit-v2/microbitlog/) interface. Provides easy to set up logging functionality for the micro:bit, generating data which can be viewed in HTML from the mounted USB partition on a PC.
 
 ## Class Definition
 ```cpp
