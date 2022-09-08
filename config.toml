@@ -35,6 +35,10 @@ theme = "hugo-theme-learn"
 
 # Allow for shortcode HTML injection.
 [markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
