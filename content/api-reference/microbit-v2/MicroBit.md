@@ -6,6 +6,7 @@ weight = 1
 Represents the micro:bit v2 in its entirety. Allows for convenient access to device drivers to control the micro:bit's various hardware elements.
 
 **Version:** `3f173e7`<br>
+**Canonical type name:** `codal::MicroBit`<br>
 **Defined within:** `MicroBit.h`
 
 {{% /center %}}
