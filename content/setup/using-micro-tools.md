@@ -52,12 +52,11 @@ This tool allows for the flashing of built micro:bit v2 projects to the micro:bi
 microflash
 ```
 
-The first time the micro:bit is flashed, it is mounted to a directory on the filesystem. By default, this is `mnt/microbit` within the scripts directory, however you can configure this directory in `config.sh` or pass it in as the command line option `MICROBIT_MOUNT_DIR`. If you want to unmount the micro:bit for whatever reason, you can simply pass `DO_UNMOUNT` to `microflash` like so:
+The first time the micro:bit is flashed, it is mounted to a directory on the filesystem. By default, this is `mnt/microbit` within the scripts directory, however you can configure this directory in `config.sh` or pass it in as the command line option `MICROBIT_MOUNT_DIR`. If you want to just mount or unmount the micro:bit without performing a flash for whatever reason, you can simply pass the `DO_MOUNT` and `DO_UNMOUNT` arguments respectively to `microflash` like so:
 ```bash
-microflash DO_UNMOUNT=true
+microflash DO_UNMOUNT=true # Unmounts the micro:bit from the system, then exits.
+microflash DO_MOUNT=true # Mounts the micro:bit to the mount directory, then exits.
 ```
-
-This will unmount the micro:bit from your system, and then exit.
 
 ## Installing micro-tools
 {{% notice note %}}
