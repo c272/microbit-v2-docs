@@ -1,6 +1,7 @@
 +++
 title = "License & Attribution"
 weight = 100
+summary = "Licensing and attribution information for the 'codal-core' documentation.<br><br>"
 +++
 The pages within the `codal-core` API reference contain code from the `codal-core` repository that is licensed under the MIT License by Lancaster University. This code is licensed separately from the documentation under the terms present below.
 

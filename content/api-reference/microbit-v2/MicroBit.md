@@ -1,6 +1,7 @@
 +++
 title = "MicroBit"
 weight = 1
+summary = "Represents the micro:bit v2 in its entirety. Allows for convenient access to device drivers to control the micro:bit's various hardware elements."
 +++
 {{% center %}}
 Represents the micro:bit v2 in its entirety. Allows for convenient access to device drivers to control the micro:bit's various hardware elements.
