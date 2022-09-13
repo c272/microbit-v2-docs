@@ -59,10 +59,26 @@ microflash DO_MOUNT=true # Mounts the micro:bit to the mount directory, then exi
 ```
 
 ## Installing micro-tools
+### Without an Existing Build Environment
+To install `micro-tools` along with a copy of the micro:bit v2 build environment, simply clone the Git repository and run the `microinstall.sh` script from within the cloned folder. This will set up your `micro-tools` install to use a freshly downloaded copy of the build environment.
+```bash
+git clone https://github.com/c272/micro-tools.git
+cd micro-tools/
+./microinstall.sh
+```
+
+Once this is done, you should see the terminal prompt you to add a `source` command to your terminal `rc` file, like so:
+```text
+Setup complete! Add the following to your terminal's startup file (eg. '~/.bashrc') to add micro-tools to your PATH:
+	source /my/path/to/micro-tools/aliases.sh
+```
+Add this to your preferred terminal's startup file (for `bash`, this is likely located at `~/.bashrc`), and then create a new terminal instance. Now you're all set up to use `micro-tools` commands!
+
+### With an Existing Build Environment
 {{% notice note %}}
 This section describes how to install `micro-tools` **after** you have already downloaded and set up an existing copy of the micro:bit v2 build environment, and thus do not have `micro-tools` already installed and configured. If you have set up micro:bit v2 through `microinstall.sh`, you should ignore this section.
 {{% /notice %}}
-To install `micro-tools`, you should first clone the repository into a user-executable directory, and then run the "`setup.sh`" script. This will prompt you for the location of your micro:bit v2 SDK, which is the `microbit-v2-samples` repository that we cloned during the setup process. Simply enter the **absolute path** of this repository, and then hit enter. The setup will complete, and prompt you to add a `source` line to your terminal's `.****.rc` file in order to be able to easily use the `micro-tools` utilities from throughout the system.
+To install `micro-tools`, you should first clone the repository into a user-executable directory, and then run the "`setup.sh`" script. This will prompt you for the location of your micro:bit v2 SDK, which is the `microbit-v2-samples` repository that we cloned during the setup process. Simply enter the **absolute path** of this repository, and then hit enter. The setup will complete, and prompt you to add a `source` line to your terminal's `.****rc` file in order to be able to easily use the `micro-tools` utilities from throughout the system.
 ```text
 micro-tools setup v0.1 (c) C272, 2022
 revision: a4489eae34
