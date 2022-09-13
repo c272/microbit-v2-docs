@@ -41,7 +41,7 @@ int main()
 This will run `onButtonA` on every click trigger from button A on the micro:bit via. the event system. 
 
 ## Methods
-### Button()
+### Button(Pin, uint16_t, ...)
 ```cpp
 Button(Pin &pin, uint16_t id, ButtonEventConfiguration eventConfiguration = DEVICE_BUTTON_ALL_EVENTS, ButtonPolarity polarity = ACTIVE_LOW, PullMode mode = PullMode::None);
 ```
