@@ -8,7 +8,7 @@ Represents the micro:bit v2 in its entirety. Allows for convenient access to dev
 
 **Version:** `3f173e7`<br>
 **Canonical type name:** `codal::MicroBit`<br>
-**Defined within:** `MicroBit.h`
+**Defined within:** `model/MicroBit.h`
 
 {{% /center %}}
 
