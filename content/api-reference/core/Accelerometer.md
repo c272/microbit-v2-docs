@@ -110,7 +110,7 @@ Sample3D getSample(CoordinateSystem coordinateSystem);
 ```
 Reads the last stored accelerometer value, converting it into the provided coordinate system before returning it.
 
-**Parameters**<br>- `coordinateSystem` (*[CoordinateSystem](/api-reference/core/coordinatesystem/)*): The type of coordinate system to return the sample as.
+**Parameters**<br>- `coordinateSystem` (*[CoordinateSystem](/api-reference/core/coordinatespace/#coordinatesystem)*): The type of coordinate system to return the sample as.
 
 **Returns** - A [Sample3D](/api-reference/core/sample3d/) of the most recently stored accelerometer reading.
 
