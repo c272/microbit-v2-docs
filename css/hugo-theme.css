@@ -10,8 +10,8 @@
 }
 
 #TableOfContents {
-    font-size: 13px !important;
-    max-height: 85vh;
+    font-size: 1em !important;
+    /*max-height: 85vh;*/
     overflow: auto;
     padding: 15px 5px !important;
 }
