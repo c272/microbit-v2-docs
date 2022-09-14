@@ -37,7 +37,7 @@ static ManagedString getSerial();
 ```
 Returns the serial number of the micro:bit v2.
 
-**Returns** - A [ManagedString](todo) containing the serial number of the device.
+**Returns** - A [ManagedString](/api-reference/core/managedstring/) containing the serial number of the device.
 
 ## Methods
 ### MicroBit()
