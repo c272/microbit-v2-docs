@@ -6,7 +6,7 @@ weight = 16
 If you installed the micro:bit v2 build environment through a method other than the script-assisted setup, you will not have had `micro-tools` installed in the setup process. In addition, the default micro:bit v2 build environment only permits you to build code from within the sample repository's "`source`" directory, which can be limiting when programming multiple micro:bit projects at once. With these things in mind, `micro-tools` allows you to remove these restrictions, as well as adding a suite of useful utilities for working with micro:bit v2 projects. So, what is `micro-tools`, and how is it installed?
 
 ## What is micro-tools?
-The `micro-tools` repository is a companion project to this documentation, and contains useful utility scripts for working with micro:bit v2 projects, as well as handy alias setup for calling the scripts from anywhere on your system. The repository can be found at `c272/micro-tools` on Github. The project is only compatible with **Linux based operating systems**, and does not explicitly support either Windows or MacOS. There are several utilities contained within the project, the most notable of which being:
+The `micro-tools` repository is a companion project to this documentation, and contains useful utility scripts for working with micro:bit v2 projects, as well as handy alias setup for calling the scripts from anywhere on your system. The repository can be found at `c272/micro-tools` on Github. The project is only compatible with **Linux and MacOS**, and does not explicitly support Windows. There are several utilities contained within the project, the most notable of which being:
 - `microinstall`
 - `microinit`
 - `microbuild`
@@ -19,7 +19,7 @@ This tool allows you to install the SDK from scratch, without having cloned anyt
 ```
 ./microinstall.sh
 ```
-And the SDK will be downloaded, installed, and configured to work with the rest of the tools & utilities in the `micro-tools` suite. This only supports distributions with either the `apt` package manager (Debian, Ubuntu, Pop!_OS and other Debian-based) or the `xbps-install` package manager (Void Linux). This tool also isn't added as an alias in `aliases.sh`, as you'll likely only want to use it once.
+And the SDK will be downloaded, installed, and configured to work with the rest of the tools & utilities in the `micro-tools` suite. This supports systems with either the `apt` package manager (Debian, Ubuntu, Pop!_OS and other Debian-based), the `xbps-install` package manager (Void Linux), or `brew` (MacOS). This tool also isn't added as an alias in `aliases.sh`, as you'll likely only want to use it once.
 
 ### microinit
 This tool allows you to set up Visual Studio Code configurations for a micro:bit v2 project, to allow you to access the APIs with Visual Studio Code's code completion and Intellisense features without the need to be inside the `microbit-v2-samples` folder. It also gives you the ability to automatically run `microbuild` from within Visual Studio Code's interface. To start a new project with `microinit`, you can run something like the following command:

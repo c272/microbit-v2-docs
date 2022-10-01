@@ -6,7 +6,7 @@ weight = 20
 The micro:bit v2 supports debugging over its provided programming port, allowing you to view the contents of memory and control the stepping of execution at runtime. To access this functionality, we will use [Visual Studio Code](https://code.visualstudio.com/) with the `marus25.cortex-debug` extension, along with one of [OpenOCD]() or [pyOCD]() to provide debugging interaction with the micro:bit v2's Cortex M0 (nRF51822) CPU. The selection of these should largely not matter, as they both provide sufficient debugging support for the extension that will interact with them.
 
 ## Installing Visual Studio Code
-To begin with, we should first install Visual Studio Code. If you've already done this, skip straight to the next step. For users on Windows and MacOS, you should download the latest version found at the official [download page](https://code.visualstudio.com/Download). However, if you're on a Linux distribution, you can likely install it straight from your package manager or via. Snap:
+To begin with, we should first install Visual Studio Code. If you've already done this, skip straight to the next step. For users on Windows, you should download the latest version found at the official [download page](https://code.visualstudio.com/Download). However, if you're on a Linux distribution or MacOS, you can likely install it straight from your package manager or via. Snap:
 
 {{< tabs groupId="os" >}}
 {{% tab name="ubuntu/debian" %}}
@@ -23,6 +23,11 @@ sudo apt install code
 sudo xbps-install -Su code-oss
 ```
 {{% /tab %}}
+{{% tab name="darwin" %}}
+```bash
+brew install --cask visual-studio-code
+```
+{{% /tab %}}
 {{% tab name="snap" %}}
 ```bash
 sudo snap install --classic code
@@ -33,7 +38,7 @@ sudo snap install --classic code
 Once this is done, you should also install the `marus25.cortex-debug` extension from the extensions marketplace. This will provide interaction between the VSCode debugger and either OpenOCD or pyOCD, allowing us to interact with the micro:bit. Before we can utilise this extension though, we must first install either OpenOCD or pyOCD.
 
 ## Installing OpenOCD
-If you have chosen to install OpenOCD, it is available officially through most package managers on Linux, and through an [automatically generated release binary](https://github.com/openocd-org/openocd/releases/tag/v0.11.0) from Github for Windows MinGW32 users. There are no officially released MacOS binaries, however there are alternative unofficial binaries provided by the `xpack-dev-tools` project, which provide binaries for [MacOS ARM64](https://github.com/xpack-dev-tools/openocd-xpack/releases), [MacOS x64](https://github.com/xpack-dev-tools/openocd-xpack/releases), [Windows x64](https://github.com/xpack-dev-tools/openocd-xpack/releases), [Linux x64](https://github.com/xpack-dev-tools/openocd-xpack/releases), and [Linux ARM64](https://github.com/xpack-dev-tools/openocd-xpack/releases). If you simply wish to install through a package manager however, you can do that like so:
+If you have chosen to install OpenOCD, it is available officially through most package managers on Linux, through `brew` on MacOS, and through an [automatically generated release binary](https://github.com/openocd-org/openocd/releases/tag/v0.11.0) from Github for Windows MinGW32 users. There are also alternative unofficial binaries provided by the `xpack-dev-tools` project, which provide binaries for [MacOS ARM64](https://github.com/xpack-dev-tools/openocd-xpack/releases), [MacOS x64](https://github.com/xpack-dev-tools/openocd-xpack/releases), [Windows x64](https://github.com/xpack-dev-tools/openocd-xpack/releases), [Linux x64](https://github.com/xpack-dev-tools/openocd-xpack/releases), and [Linux ARM64](https://github.com/xpack-dev-tools/openocd-xpack/releases). If you simply wish to install through a package manager however, you can do that like so:
 
 {{< tabs groupId="os" >}}
 {{% tab name="ubuntu/debian" %}}
@@ -44,6 +49,11 @@ sudo apt install openocd
 {{% tab name="void" %}}
 ```bash
 sudo xbps-install -Su openocd
+```
+{{% /tab %}}
+{{% tab name="darwin" %}}
+```bash
+brew install open-ocd
 ```
 {{% /tab %}}
 {{< /tabs >}}

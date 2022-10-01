@@ -10,12 +10,12 @@ Welcome to the C272 Unofficial micro:bit v2 documentation. This site aims to com
 {{% /center %}}
 
 ## Getting Started
-To get started with micro:bit v2, there are different options available depending on your flavour of operating system. If you are on a Debian-based Linux distribution, Void Linux, or have [installed WSL2](/setup/windows-install-guide/#installing-through-wsl2-ubuntu) on Windows, then you can use the `micro-tools` script-assisted setup method, which will allow you to set up the SDK for building and creating micro:bit v2 projects with a single command. If you are on MacOS, Windows, or a separate Linux distribution, then you will have to follow the manual method for setting up the build environment.
+To get started with micro:bit v2, there are different options available depending on your flavour of operating system. If you are on a Debian-based Linux distribution, Void Linux, MacOS, or have [installed WSL2](/setup/windows-install-guide/#installing-through-wsl2-ubuntu) on Windows, then you can use the `micro-tools` script-assisted setup method, which will allow you to set up the SDK for building and creating micro:bit v2 projects with a single command. If you are on Windows or a Linux distribution with an unsupported package manager, then you will have to follow the manual method for setting up the build environment.
 
 ### Script-assisted Setup
 For automatic setup, we will use `microinstall.sh` from the `c272/micro-tools` repository. This repository contains many useful tools for building and configuring build environments for micro:bit v2 projects, and is a companion project to this documentation. To install the build environment, all we have to do is clone the repository somewhere that has user execute permissions, and execute the install script. You will need `sudo` permissions for some parts of the install process.
 {{% notice note %}}
-This requires a Linux distribution with either the `apt` package manager (Debian, Ubuntu, Pop!_OS and other Debian based), or the `xbps` package manager (Void Linux). If you're on Windows, you can [install WSL2](/setup/windows-install-guide/#installing-through-wsl2-ubuntu) and then continue following this guide.
+This requires a system with either the `apt` package manager (Debian, Ubuntu, Pop!_OS and other Debian based), the `xbps` package manager (Void Linux) or `brew` (MacOS). If you're on Windows, you can [install WSL2](/setup/windows-install-guide/#installing-through-wsl2-ubuntu) and then continue following this guide.
 {{% /notice %}}
 ```bash
 git clone https://github.com/c272/micro-tools.git
@@ -31,7 +31,7 @@ git clone https://github.com/lancaster-university/microbit-v2-samples microbit-v
 cd microbit-v2/
 ```
 
-Once this is done, you will also have to install several prerequisite dependencies in order to begin building and using the micro:bit API. If you are on Windows, you will likely not have a package manager installed. In this case, refer to the [Windows Install Guide](/setup/windows-install-guide/) for information on how to install the necessary dependencies. If you are on a Linux distribution, however, you can simply install packages from the command line, as shown below:
+Once this is done, you will also have to install several prerequisite dependencies in order to begin building and using the micro:bit API. If you are on Windows, you will likely not have a package manager installed. In this case, refer to the [Windows Install Guide](/setup/windows-install-guide/) for information on how to install the necessary dependencies. If you are on a Linux distribution or MacOS, however, you can simply install packages from the command line, as shown below:
 {{< tabs groupId="os" >}}
 {{% tab name="ubuntu/debian" %}}
 ```bash
@@ -43,6 +43,12 @@ sudo apt install gcc python3 cmake gcc-arm-none-eabi binutils-arm-none-eabi
 sudo xbps-install -Su python3 cmake cross-arm-none-eabi cross-arm-none-eabi-gcc \
     cross-arm-none-eabi-binutils cross-arm-none-eabi-newlib \
     cross-arm-none-eabi-libstdc++
+```
+{{% /tab %}}
+{{% tab name="darwin" %}}
+```bash
+brew install cmake python3
+brew install --cask gcc-arm-embedded
 ```
 {{% /tab %}}
 {{< /tabs >}}
