@@ -207,7 +207,7 @@ The micro:bit's internal LED column pins, represented as [NRF52Pin](/api-referen
 ```cpp
 const MatrixMap ledMatrixMap;
 ```
-A map representing the LED matrix on the front of the micro:bit, as a CODAL [MatrixMap](/api-reference/core/matrixmap/).
+A map representing the LED matrix on the front of the micro:bit, as a CODAL [MatrixMap](/api-reference/core/ledmatrix#matrixmap).
 
 ### display
 ```cpp
