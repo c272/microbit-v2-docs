@@ -12,9 +12,11 @@ MicroBit uBit;
 
 int main()
 {
+    //If you want to use the serial from the micro:bit parent object, simply:
     uBit.init();
+    uBit.serial.setBaud(...);
 
-    //Set up our serial connection with a non-default baud rate & buffer sizes.
+    //If you want to set up a connection manually without using MicroBit:
     MicroBitSerial serial(USB_UART_TX, USB_UART_RX, 64, 64);
     serial.setBaud(57600);
 }
